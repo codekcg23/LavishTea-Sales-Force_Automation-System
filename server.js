@@ -1,20 +1,9 @@
 const express=require('express');
 const mongoose = require('mongoose');
 const bodyParser=require('body-parser');
+const path = require('path'); 
+
 const app=express();//create an express app
-// to deploy in heroku
-const path = require('path');           
-const PORT = process.env.PORT || 8000;
-if (process.env.NODE_ENV === 'production') {           
-
-    app.use(express.static(path.join(__dirname, "client", "build")));
-  
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-  }
-
-//const app=express();//create an express app
 
 app.use(bodyParser.urlencoded({extended:true}))//for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json())//for parsing application/json
@@ -74,7 +63,17 @@ app.use('/analytics',analytics);
 app.use('/reports',reports);
 app.use('/tracking',tracking);
 
+// to deploy in heroku
+          
+const PORT = process.env.PORT || 8000;
+if (process.env.NODE_ENV === 'production') {           
 
+    app.use(express.static("client/build"));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }
 
 // listen for requests
 app.listen(PORT, () => {

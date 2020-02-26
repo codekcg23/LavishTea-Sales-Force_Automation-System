@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
+    "client":"cd client && npm start",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
@@ -27,6 +28,7 @@
     "validator": "^11.1.0"
   },
   "engines": {
-    "node": "11.10.0"
+    "node": "11.10.0",
+    "npm":"6.9.0"
   }
 }
