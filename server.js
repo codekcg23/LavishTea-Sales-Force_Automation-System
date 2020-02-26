@@ -1,7 +1,7 @@
 const express=require('express');
 const mongoose = require('mongoose');
 const bodyParser=require('body-parser');
-
+const app=express();//create an express app
 // to deploy in heroku
 const path = require('path');           
 const PORT = process.env.PORT || 8000;
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
 
-const app=express();//create an express app
+//const app=express();//create an express app
 
 app.use(bodyParser.urlencoded({extended:true}))//for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json())//for parsing application/json
