@@ -37,7 +37,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  
+  "homepage": "https://lavish-tea.herokuapp.com/login",
   "optionalDependencies": {
     "@types/googlemaps": "3.36.4",
     "@types/markerclustererplus": "2.1.33",
