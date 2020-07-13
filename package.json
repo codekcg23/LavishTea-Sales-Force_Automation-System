@@ -9,7 +9,6 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js"
-  
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +30,6 @@
   },
   "engines": {
     "node": "11.10.0",
-    "npm":"6.9.0"
+    "npm": "6.9.0"
   }
 }

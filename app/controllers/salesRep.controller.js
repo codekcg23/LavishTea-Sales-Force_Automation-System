@@ -96,13 +96,7 @@ exports.delete = (req,res) => {
         .findByIdAndUpdate(req.params.id,{status:req.body.status},{new:true})
         .then(salesRep => {
             if(salesRep){
-                return res.status(200).json(salesRep);
-               // salesRep.remove()
-            //    salesRep
-            //         .save()
-            //         .then(res.status(200).json(salesRep)) 
-            //         .catch(err=>{return res.status(400).json(err)});                
-                //return res.status(200).json({'salesRep' : 'salesRep deleted successfuly !'});   
+                return res.status(200).json(salesRep); 
             }
             else{
                 return res.status(404).send("cannot find salesRep with given id");
